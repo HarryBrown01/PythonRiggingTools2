@@ -1,7 +1,3 @@
-"""
-leg @ rig
-"""
-
 import maya.cmds as mc
 
 from ..base import module
@@ -10,27 +6,8 @@ from ..base import control
 from ..utils import joint
 from ..utils import name
 
-def build(
-          legJoints,
-          topToeJoints,
-          pvLocator,
-          scapulaJnt = '',
-          prefix = 'l_leg',
-          rigScale = 1.0,
-          baseRig = None
-          ):
-    
-    """
-    @param legJoints: list( str ), shoulder - elbow - hand - toe - end toe
-    @param topToeJoints: list( str ), top metacarpal toe joints
-    @param pvLocator: str, reference locator for position of Pole Vector control
-    @param scapulaJnt: str, optional, scapula joint, parent of top leg joint
-    @param prefix: str, prefix to name new objects
-    @param rigScale: float, scale factor for size of controls
-    @param baseRig: baseRig: instance of base.module.Base class
-    @return: dictionary with rig module objects
-    """
-    
+def build(legJoints, topToeJoints, pvLocator, scapulaJnt = '', prefix = 'l_leg', rigScale = 1.0, baseRig = None):
+          
     # make rig module
     
     rigmodule = module.Module( prefix = prefix, baseObj = baseRig )
