@@ -104,5 +104,3 @@ def build(legJoints, topToeJoints, pvLocator, scapulaJnt = '', prefix = 'l_leg',
     
     
     return { 'module':rigmodule, 'baseAttachGrp':baseAttachGrp, 'bodyAttachGrp':bodyAttachGrp }
-    
-    
