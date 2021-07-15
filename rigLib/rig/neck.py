@@ -1,31 +1,10 @@
-"""
-neck @ rig
-"""
-
 import maya.cmds as mc
 
 from ..base import module
 from ..base import control
 
-def build(
-          neckJoints,
-          headJnt,
-          neckCurve,
-          prefix = 'neck',
-          rigScale = 1.0,
-          baseRig = None
-          ):
-    
-    """
-    @param neckJoints: list( str ), list of neck joints
-    @param headJnt: str, head joint at the end of neck joint chain
-    @param neckCurve: str, name of neck cubic curve with 5 CVs matching neck joints
-    @param prefix: str, prefix to name new objects
-    @param rigScale: float, scale factor for size of controls
-    @param baseRig: instance of base.module.Base class
-    @return: dictionary with rig module objects
-    """
-    
+def build(neckJoints, headJnt, neckCurve, prefix = 'neck', rigScale = 1.0, baseRig = None):
+
     # make rig module
     
     rigmodule = module.Module( prefix = prefix, baseObj = baseRig )
@@ -96,19 +75,4 @@ def build(
     mc.connectAttr( headMainCtrl.C + '.worldMatrix[0]', neckIk + '.dWorldUpMatrixEnd' )
     mc.connectAttr( baseAttachGrp + '.worldMatrix[0]', neckIk + '.dWorldUpMatrix' )
     
-    
     return { 'module':rigmodule, 'baseAttachGrp':baseAttachGrp, 'bodyAttachGrp':bodyAttachGrp }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
