@@ -1,35 +1,11 @@
-"""
-headParts @ rig
-"""
-
 import maya.cmds as mc
 
 from ..base import module
 from ..base import control
 
 
-def build(
-          headJnt,
-          jawJnt,
-          muzzleJoints,
-          leftEyeJnt,
-          rightEyeJnt,
-          prefix = 'headParts',
-          rigScale = 1.0,
-          baseRig = None
-          ):
-    
-    """
-    @param headJnt: str, name of head joint
-    @param jawJnt: str, name of jaw joint
-    @param muzzleJoints: list(str), list with 2 muzzle joints chain
-    @param leftEyeJnt: str, name of left eye joint
-    @param rightEyeJnt: str, name of right eye joint
-    @param rigScale: float, scale factor for size of controls
-    @param baseRig: baseRig: instance of base.module.Base class
-    @return: dictionary with rig module objects
-    """
-    
+def build(headJnt, jawJnt, muzzleJoints, leftEyeJnt, rightEyeJnt, prefix = 'headParts', rigScale = 1.0, baseRig = None ):
+       
     # make rig module
     
     rigmodule = module.Module( prefix = prefix, baseObj = baseRig )
