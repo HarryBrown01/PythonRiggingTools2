@@ -1,26 +1,9 @@
-"""
-Creating the spine rig
-"""
-
 import maya.cmds as mc
 
 from ..base import module
 from ..base import control
 
 def build( spineJoints, rootJnt, spineCurve, bodyLocator, chestLocator, pelvisLocator, prefix = 'spine', rigScale = 1.0, baseRig = None ):
-
-    """
-    :param spineJoints: list( str ), list of 6 spine joints
-    :param rootJnt: str, root joint
-    :param spineJnt: str, name of spine cubic curve with 5 CVs matching first 5 spine joints
-    :param bodyLocator: str, reference transform for position of body control
-    :param chestLocator: str, reference transform for position of chest control
-    :param pelvisLocator: str, reference transform for position of pelvis control
-    :param prefix: str, prefix to name new objects
-    :param rigScale: float, scale factor for size of controls
-    :param baseRig: instance of base.module.Base class
-    :return: dictionary with rig module objects
-    """
 
     # make rig module
 
