@@ -90,7 +90,3 @@ def build(chainJoints, chainCurve, prefix = 'tail', rigScale = 1.0, smallestScal
     
     
     return { 'module':rigmodule, 'baseAttachGrp':baseAttachGrp }
-    
-    
-    
-       
