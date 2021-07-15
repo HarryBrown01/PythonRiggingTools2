@@ -45,11 +45,3 @@ def build(headJnt, jawJnt, muzzleJoints, leftEyeJnt, rightEyeJnt, prefix = 'head
     
     
     return { 'module':rigmodule }
-    
-    
-    
-    
-    
-    
-    
-    
