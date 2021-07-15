@@ -7,27 +7,8 @@ import maya.cmds as mc
 from ..base import module
 from ..base import control
 
-def build(
-          chainJoints,
-          chainCurve,
-          prefix = 'tail',
-          rigScale = 1.0,
-          smallestScalePercent = 0.5,
-          fkParenting = True,
-          baseRig = None
-          ):
-    
-    """
-    @param chainJoints: list( str ), list of chain joints
-    @param chainCurve: str, name of chain cubic curve
-    @param prefix: str, prefix to name new objects
-    @param rigScale: float, scale factor for size of controls
-    @param smallestScalePercent: float, scale of smallest control at the end of chain compared to rigScale
-    @param fkParenting: bool, parent each control to previous one to make FK chain
-    @param baseRig: instance of base.module.Base class
-    @return: dictionary with rig module objects
-    """
-    
+def build(chainJoints, chainCurve, prefix = 'tail', rigScale = 1.0, smallestScalePercent = 0.5, fkParenting = True, baseRig = None):
+
     # make rig module
     
     rigmodule = module.Module( prefix = prefix, baseObj = baseRig )
